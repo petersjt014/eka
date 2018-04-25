@@ -1,11 +1,15 @@
 # Eka
-Eka is an unfinished podcast parser written in Nim. 
+Eka is an unfinished podcast parser written in Nim.
+
+## How do I use it?
+
+`>nim compile -d:ssl parser.nim && parser.exe`
 
 ## What does it do?
 
 Right now? Not much. Writing something yourself is the best way to learn a language (and I can only write fibonacci number finders so many times), which is one of two reasons this program exists--the other being that I could not find a similar tool anywhere.
 
-But if you are curious, this is the current output without any arguments (which runs the baked-in test case):
+But if you are curious, firing it up it without arguments runs a baked-in test case. The results look like this:
 
 ````
 title :: Til Death Do Us Blart 2017
@@ -49,6 +53,10 @@ Overall, I'm not sure--but I do have a list of features to be added as of now.
 * a graphical interface (possibly, depends on complexity) as webui, or maybe Qt
   * ability to be used as a library and as an interactive program ala [mpv](https://github.com/mpv-player/mpv)
 * ability to scrape feeds on an interval, either in their entirety or just specific fields (ideally without relying on cron or the like)
+
+"maybe, eventually" features:
+
+* distributed network-based recommendation system possibly using PageRank and/or a basic DHT
 
 Feature suggestions and general contributions in the form of PRs are welcome.
 

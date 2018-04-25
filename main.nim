@@ -1,11 +1,11 @@
 import httpclient, os, streams, strfmt, strutils, typetraits
 import xmltree, xmlparser
 
-
+# get the rss feed itself
 proc fetch(url: string): string =
   return newHttpClient().getContent(url)
 
-
+# debug-ish proc to help try and understand the weird parsing nuances in the description (re. CDATA?)
 proc infoDump(episode: XmlNode): void =
   for n in episode.items:
     echo n.tag & " ::: " & n.innerText
@@ -19,6 +19,7 @@ proc parse(doc: string): string =
   echo "\n"
   for episode in sdoc.parseXml.findAll("item"):
     for field in @["title", "pubDate", "itunes:duration"]:
+      # this is done because the string formatting is inconsistent
       var prelim: string = episode.child(field).innerText
       let content: string = 
         if prelim == nil: episode.child(field).text else: prelim

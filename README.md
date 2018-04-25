@@ -1,4 +1,4 @@
-# eka
+# Eka
 Eka is an unfinished podcast parser written in Nim. 
 
 ## What does it do?

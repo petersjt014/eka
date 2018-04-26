@@ -1,9 +1,9 @@
 # Eka
-Eka is an unfinished podcast parser written in Nim.
+Eka is an unfinished podcast parser/analysis tool written in Nim.
 
 ## How do I use it?
 
-`nim compile -d:ssl parser.nim && parser.exe`
+Compile with `nim compile -d:ssl main.nim` and simply run the executable.
 
 ## What does it do?
 

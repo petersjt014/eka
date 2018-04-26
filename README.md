@@ -3,7 +3,7 @@ Eka is an unfinished podcast parser written in Nim.
 
 ## How do I use it?
 
-`>nim compile -d:ssl parser.nim && parser.exe`
+`nim compile -d:ssl parser.nim && parser.exe`
 
 ## What does it do?
 
@@ -46,16 +46,13 @@ Overall, I'm not sure--but I do have a list of features to be added as of now.
   * as a measure of a ratio of length vs size 
   * as measured by bitrate (if sampling each individual episode is feasible)
 * storing gathered data offline (likely as sqlite or json)
+* graphical interface via webgui and tray icon (prob. via [this](https://github.com/zserge/tray) library)
 
-"maybe" features:
+"maybe/eventually" features:
 
 * abstracting it to general rss feeds
-* a graphical interface (possibly, depends on complexity) as webui, or maybe Qt
-  * ability to be used as a library and as an interactive program ala [mpv](https://github.com/mpv-player/mpv)
 * ability to scrape feeds on an interval, either in their entirety or just specific fields (ideally without relying on cron or the like)
-
-"maybe, eventually" features:
-
+* [gpodder](https://gpodder.net/developer) integration
 * distributed network-based recommendation system possibly using PageRank and/or a basic DHT
 
 Feature suggestions and general contributions in the form of PRs are welcome.

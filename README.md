@@ -37,23 +37,23 @@ itunes:duration :: 01:31
 Overall, I'm not sure--but I do have a list of features to be added as of now.
 
 "probably" features:
-
-* accepting either a single url or an OPML file as input
-* showing the average length of episodes
-* showing the average timespan between episode releases
-* showing the average filesize of episodes
-* showing the average quality of an episode
-  * as a measure of a ratio of length vs size 
-  * as measured by bitrate (if sampling each individual episode is feasible)
-* storing gathered data offline (likely as sqlite or json)
-* graphical interface via webgui and tray icon (prob. via [this](https://github.com/zserge/tray) library)
+* [x] Cross-platform tray icon
+* [ ] accepting either a single url or an OPML file as input
+* [ ] showing the average length of episodes
+* [ ] showing the average timespan between episode releases
+* [ ] showing the average filesize of episodes
+* [ ] showing the average quality of an episode
+  * [ ] as a measure of a ratio of length vs size 
+  * [ ] as measured by bitrate (if sampling each individual episode is feasible)
+* [ ] storing gathered data offline (likely as sqlite or json)
+* [ ] graphical interface via webgui and [tray icon](https://github.com/zserge/tray)
 
 "maybe/eventually" features:
 
-* abstracting it to general rss feeds
-* ability to scrape feeds on an interval, either in their entirety or just specific fields (ideally without relying on cron or the like)
-* [gpodder](https://gpodder.net/developer) integration
-* distributed network-based recommendation system possibly using PageRank and/or a basic DHT
+* [ ] abstracting it to general rss feeds
+* [ ] ability to scrape feeds on an interval, either in their entirety or just specific fields (ideally without relying on cron or the like)
+* [ ] [gpodder](https://gpodder.net/developer) integration
+* [ ] distributed network-based recommendation system possibly using PageRank and/or a basic DHT
 
 Feature suggestions and general contributions in the form of PRs are welcome.
 
@@ -67,6 +67,6 @@ Since this is the first tool of its kind (I looked just about everywhere and fou
 
 ## TODO
 
-* switch to the included testing framework
-* determine weird xml edge cases
-  * handle edge cases
+* [ ] switch to the included testing framework
+* [ ] determine weird xml edge cases
+  * [ ] handle edge cases

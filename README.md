@@ -47,7 +47,7 @@ probably:
   * [ ] as a measure of a ratio of length vs size 
   * [ ] as measured by bitrate (if sampling each individual episode is feasible)
 * [ ] storing gathered data offline (likely as sqlite or json)
-* [ ] graphical interface via webgui and [tray icon](https://github.com/zserge/tray)
+* [ ] graphical interface via [webgui](https://github.com/pragmagic/karax) and [tray icon](https://github.com/zserge/tray)
 
 maybe/eventually:
 

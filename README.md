@@ -36,7 +36,8 @@ itunes:duration :: 01:31
 
 Overall, I'm not sure--but I do have a list of features to be added as of now.
 
-"probably" features:
+probably:
+
 * [ ] Cross-platform tray icon
 * [ ] accepting either a single url or an OPML file as input
 * [ ] showing the average length of episodes
@@ -48,7 +49,7 @@ Overall, I'm not sure--but I do have a list of features to be added as of now.
 * [ ] storing gathered data offline (likely as sqlite or json)
 * [ ] graphical interface via webgui and [tray icon](https://github.com/zserge/tray)
 
-"maybe/eventually" features:
+maybe/eventually:
 
 * [ ] abstracting it to general rss feeds
 * [ ] ability to scrape feeds on an interval, either in their entirety or just specific fields (ideally without relying on cron or the like)
@@ -59,7 +60,7 @@ Feature suggestions and general contributions in the form of PRs are welcome.
 
 ## Why Nim?
 
-I like the raw speed that low level languages tend to offer, and the chance to use one with a Python-ish level of openness was too good to pass up. The availability of several other features (such as the optional garbage collector) played a part too.
+I like the raw speed that low level languages tend to offer, and the chance to use one with a Python-ish feel was too good to pass up. The availability of several other features (such as the optional garbage collector) played a part too.
 
 ## Why that name?
 

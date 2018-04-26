@@ -37,7 +37,7 @@ itunes:duration :: 01:31
 Overall, I'm not sure--but I do have a list of features to be added as of now.
 
 "probably" features:
-* [x] Cross-platform tray icon
+* [ ] Cross-platform tray icon
 * [ ] accepting either a single url or an OPML file as input
 * [ ] showing the average length of episodes
 * [ ] showing the average timespan between episode releases

@@ -1,9 +1,12 @@
-import httpclient, os, streams, strfmt, strutils, typetraits
+import algorithm, future, httpclient, os, streams, strfmt
+import strutils, sequtils, system, typetraits, times
 import xmltree, xmlparser
+
 
 # get the rss feed itself
 proc fetch(url: string): string =
   return newHttpClient().getContent(url)
+
 
 # debug-ish proc to help try and understand the weird parsing nuances in the description (re. CDATA?)
 proc infoDump(episode: XmlNode): void =
@@ -13,12 +16,36 @@ proc infoDump(episode: XmlNode): void =
     echo interp"v \n ${repr(x)} \n ^"
 
 
-proc parse(doc: string): string =
-  let sdoc = newStringStream(doc)
+# needed because passing a stream as an argument apparently doesn't work
+proc getStream(doc: string): StringStream =
+  return newStringStream(doc)
 
+
+proc avgduration(doc: string): auto =
+
+  var tlist = 
+    getStream(doc)
+    .parseXml
+    .findAll("item")
+    .map(proc(item: XMLNode): seq[int] =
+      item
+      .child("itunes:duration")
+      .innerText
+      .split(":")
+      .map(parseInt)
+      .reversed
+      .concat(@[0,0]))
+    .map(proc(x: seq[int]): int = 
+      x[0] + x[1] * 60 + x[2] * 3600)
+
+  return tlist.foldr(a+b).div(tlist.len)
+
+
+proc parse(doc: string): string =
   echo "\n"
-  for episode in sdoc.parseXml.findAll("item"):
+  for episode in getStream(doc).parseXml.findAll("item"):
     for field in @["title", "pubDate", "itunes:duration"]:
+      
       # this is done because the string formatting is inconsistent
       var prelim: string = episode.child(field).innerText
       let content: string = 
@@ -26,8 +53,13 @@ proc parse(doc: string): string =
       
       echo field & " :: " & content 
     echo "\n"
-      
+
     #infoDump(episode)
+
+  let average = avgduration(doc)
+  echo "\n", 
+    interp"average duration: $average seconds",
+    interp", or ${average/3600} hours"
 
   return "not done yet lol"
 

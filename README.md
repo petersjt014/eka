@@ -30,6 +30,10 @@ itunes:duration :: 01:27:46
 title :: Til Death Do Us Blart: Trailer
 pubDate :: Fri, 13 Nov 2015 20:02:35 +0000
 itunes:duration :: 01:31
+
+
+
+average duration: 3883 seconds, or 1.07861 hours
 ````
 
 ## What will it do?
@@ -40,7 +44,7 @@ probably:
 
 * [ ] Cross-platform tray icon
 * [ ] accepting either a single url or an OPML file as input
-* [ ] showing the average length of episodes
+* [x] showing the average length of episodes
 * [ ] showing the average timespan between episode releases
 * [ ] showing the average filesize of episodes
 * [ ] showing the average quality of an episode
